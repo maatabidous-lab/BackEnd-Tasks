@@ -1,0 +1,26 @@
+[
+    {
+        "Name": "محمد خالد",
+        "Phone": "01014397881",
+        "Sallary": "800",
+        "Address": "شبين الكوم",
+        "Role": "Cleaner",
+        "Shift": "Evening 🌙"
+    },
+    {
+        "Name": "على الجرجاوي",
+        "Phone": "01014397881",
+        "Sallary": "4800",
+        "Address": "شبين الكوم",
+        "Role": "Cashier",
+        "Shift": "Morning ☀️"
+    },
+    {
+        "Name": "سمير هاني",
+        "Phone": "01014397881",
+        "Sallary": "1200",
+        "Address": "شبين القناطر",
+        "Role": "Cashier",
+        "Shift": "Night 🌃"
+    }
+]

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/Str.css">
+    <title>Streams Lab - Pharaoh</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="head">
+            <div>
+                <h1>𓂀 Streams Lab</h1>
+                <p>Learn Node.js Streams - Readable / Writable / Transform</p>
+            </div>
+            <span class="badge">TASK #1</span>
+        </div>
+
+        <!-- الاحصائيات -->
+        <div class="stats">
+            <div class="stat">
+                <b id="totalChunks">0</b>
+                <span>Total Chunks</span>
+            </div>
+            <div class="stat">
+                <b id="totalBytes">0 KB</b>
+                <span>Bytes Streamed</span>
+            </div>
+            <div class="stat">
+                <b id="speed">0 KB/s</b>
+                <span>Speed</span>
+            </div>
+            <div class="stat gold">
+                <b id="status">Idle</b>
+                <span>Status</span>
+            </div>
+        </div>
+
+        <div class="layout">
+            <!-- الشمال: الرفع -->
+            <div class="card upload-card">
+                <h2>📦 Upload File With Stream</h2>
+                <p class="sub">اسحب الملف هنا او دوس للاختيار</p>
+
+                <label class="dropzone" for="fileInput">
+                    <div class="drop-icon">𓆣</div>
+                    <b>Drop file here</b>
+                    <span>or click to browse - max 100MB</span>
+                    <input type="file" id="fileInput" hidden>
+                </label>
+
+                <div class="file-info" id="fileInfo" style="display:none">
+                    <span id="fileName">file.txt</span>
+                    <span id="fileSize">0 KB</span>
+                </div>
+
+                <div class="progress-wrap">
+                    <div class="progress-top">
+                        <span>Streaming Progress</span>
+                        <span id="progressText">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="btns">
+                    <button class="btn btn-gold" id="startBtn">▶ Start Stream</button>
+                    <button class="btn btn-dark" id="pauseBtn">⏸ Pause</button>
+                    <button class="btn btn-outline" id="resetBtn">↺ Reset</button>
+                </div>
+
+                <!-- الـ Chunks -->
+                <h3 class="chunks-title">Chunks Flow</h3>
+                <div class="chunks" id="chunksBox">
+                    <span class="empty">No chunks yet... Start stream to see magic ✨</span>
+                </div>
+            </div>
+
+            <!-- اليمين: الشرح واللوج -->
+            <div class="right">
+                <div class="card">
+                    <h2>⚡ Stream Types</h2>
+                    <div class="types">
+                        <div class="type">
+                            <b>1. Readable</b>
+                            <p>بيقرا الداتا حتة حتة، زي ما بتقرا كتاب صفحة صفحة</p>
+                            <code>fs.createReadStream()</code>
+                        </div>
+                        <div class="type">
+                            <b>2. Writable</b>
+                            <p>بيكتب الداتا حتة حتة، زي ما بتكتب في كراسة</p>
+                            <code>fs.createWriteStream()</code>
+                        </div>
+                        <div class="type active">
+                            <b>3. Transform</b>
+                            <p>بيقرا ويعدل ويكتب في نفس الوقت</p>
+                            <code>zlib.createGzip()</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card log-card">
+                    <div class="log-head">
+                        <h2>📜 Stream Log</h2>
+                        <button class="clear" id="clearLog">Clear</button>
+                    </div>
+                    <div class="log" id="logBox">
+                        <div class="log-line"><span class="time">00:00:00</span> <span>Waiting for stream...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- المطلوب منك -->
+        <div class="card task-card">
+            <h2>🎯 المطلوب منك في التاسك</h2>
+            <ol>
+                <li>اعمل <code>server.js</code> فيه <code>POST /upload</code> بيستقبل الملف بـ
+                    <code>Readable Stream</code></li>
+                <li>استخدم <code>highWaterMark: 16 * 1024</code> عشان تقسم الملف لـ Chunks 16KB</li>
+                <li>اعمل <code>Transform Stream</code> يحول الداتا لـ Uppercase قبل ما تتخزن</li>
+                <li>اعرض كل Chunk في الـ <code>#chunksBox</code> وحدث الـ Progress</li>
+                <li>لو ضغط Pause اعمل <code>stream.pause()</code> ولو Resume اعمل <code>stream.resume()</code></li>
+            </ol>
+        </div>
+
+    </div>
+    <script src="../public/Str.js"></script>
+</body>
+
+</html>

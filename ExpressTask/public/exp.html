@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/exp.css">
+  <title>Express Task</title>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div>
+      <h1>Express.js Lab</h1>
+      <p>Build your first API with Express - No more raw http</p>
+    </div>
+    <span class="badge">TASK #2</span>
+  </div>
+
+  <!-- Stats -->
+  <div class="grid">
+    <div class="card">
+      <p>Routes</p>
+      <h2>5 Routes</h2>
+      <small>GET / POST / DELETE</small>
+    </div>
+    <div class="card">
+      <p>Middleware</p>
+      <h2>2 Middlewares</h2>
+      <small>logger + json parser</small>
+    </div>
+    <div class="card">
+      <p>Port</p>
+      <h2>3000</h2>
+      <small>localhost:3000</small>
+    </div>
+
+    <!-- كارت عريض - الـ Tester -->
+    <div class="card wide">
+      <div class="row">
+        <div>
+          <p>Live API Tester</p>
+          <h2>جرب الـ API من هنا</h2>
+        </div>
+        <span class="badge ok">● Server Online</span>
+      </div>
+
+      <div class="tester">
+        <div class="method-row">
+          <select id="method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="DELETE">DELETE</option>
+          </select>
+          <input type="text" id="url" value="/api/employees" placeholder="/api/employees">
+          <button class="btn-send" id="sendBtn">Send →</button>
+        </div>
+
+        <label class="label">Body (for POST)</label>
+        <textarea id="bodyInput" rows="3" placeholder='{"name": "Ahmed", "role": "Pharmacist"}'></textarea>
+
+        <label class="label">Response</label>
+        <pre class="response" id="responseBox">{
+  "message": "Press Send to test your Express server..."
+}</pre>
+      </div>
+    </div>
+
+    <!-- المطلوب -->
+    <div class="card wide">
+      <p>المطلوب منك</p>
+      <h2 style="font-size: 20px; margin-bottom: 12px;">🎯 اعمل ده في server.js</h2>
+      <ol class="task-list">
+        <li>اعمل <code>npm install express</code> واعمل سيرفر بـ <code>app.listen(3000)</code></li>
+        <li>اعمل <code>app.use(express.json())</code> عشان تقرا الـ Body</li>
+        <li>اعمل <code>app.get('/api/employees')</code> يرجع كل الموظفين</li>
+        <li>اعمل <code>app.post('/api/employees')</code> يضيف موظف جديد</li>
+        <li>اعمل <code>app.get('/api/employees/:id')</code> يجيب موظف واحد</li>
+        <li>اعمل Middleware يطبع <code>Method + URL + Time</code> لكل طلب</li>
+      </ol>
+    </div>
+
+    <!-- Routes Table -->
+    <div class="card wide">
+      <p>Routes Table</p>
+      <div class="routes">
+        <div class="route"><span class="m get">GET</span><code>/api/employees</code><span>Get all</span></div>
+        <div class="route"><span class="m get">GET</span><code>/api/employees/:id</code><span>Get one</span></div>
+        <div class="route"><span class="m post">POST</span><code>/api/employees</code><span>Create</span></div>
+        <div class="route"><span class="m del">DELETE</span><code>/api/employees/:id</code><span>Delete</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="time">Express Task • Made with my favorite style ☕</div>
+
+</div>
+
+<script src="../public/exp.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  background: #121110;
+  color: #f5f0e8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* ===== الهيدر - على ذوقي ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  background: #1e1c1a;
+  padding: 22px 24px;
+  border-radius: 16px;
+  border: 1px solid #2e2a26;
+  border-left: 4px solid #e8b04b;
+}
+
+.header h1, .header h2 {
+  color: #f5f0e8 !important;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.header p {
+  color: #a39e97 !important;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.badge {
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  background: #e8b04b;
+  color: #121110;
+}
+
+.badge.ok {
+  background: #2a2e26;
+  color: #a3e635;
+  border: 1px solid #3a4030;
+}
+
+/* ===== الجريد ===== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+
+.card {
+  background: #1e1c1a;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #2e2a26;
+  transition: 0.2s;
+}
+
+.card:hover {
+  border-color: #4a453f;
+  transform: translateY(-2px);
+}
+
+.card.wide {
+  grid-column: span 3;
+  background: #1e1c1a;
+  border-left: 4px solid #e8b04b;
+}
+
+.card p {
+  color: #a39e97;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.card h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #f5f0e8;
+  letter-spacing: -0.5px;
+}
+
+.card small {
+  color: #7a756e;
+  display: block;
+  margin-top: 8px;
+  word-break: break-all;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row p { margin: 0; }
+.row h2 { font-size: 24px; }
+
+/* ===== البار - على ذوقي ===== */
+.bar {
+  height: 8px;
+  background: #2e2a26;
+  border-radius: 999px;
+  margin: 14px 0;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #e8b04b;
+  width: 0%;
+  transition: width 0.5s;
+  border-radius: 999px;
+}
+
+.fill.warn {
+  background: #f59e0b;
+}
+
+.fill.danger {
+  background: #ef4444;
+}
+
+.time {
+  text-align: center;
+  margin-top: 20px;
+  color: #7a756e;
+  font-size: 12px;
+  font-weight: 600;
+  background: transparent;
+  padding: 10px;
+  border: 1px dashed #2e2a26;
+  border-radius: 12px;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .card.wide { grid-column: span 1; }
+}

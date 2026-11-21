@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Server Health</title>
+  <link rel="stylesheet" href="../Public/Os.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🖥️ حالة السيرفر</h1>
+      <span id="status" class="badge ok">● ONLINE</span>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <p>اسم السيرفر</p>
+        <h2 id="hostname">...</h2>
+        <small id="platform">...</small>
+      </div>
+
+      <div class="card">
+        <p>البروسيسور</p>
+        <h2 id="cpus">...</h2>
+        <small id="cpuModel">...</small>
+      </div>
+
+      <div class="card">
+        <p>شغال بقاله</p>
+        <h2 id="uptime">...</h2>
+        <small>بالثانية</small>
+      </div>
+
+      <div class="card wide">
+        <div class="row">
+          <p>استخدام الرام</p>
+          <b id="memPercent">0%</b>
+        </div>
+        <div class="bar">
+          <div id="memBar" class="fill"></div>
+        </div>
+        <small id="memDetail">...</small>
+      </div>
+    </div>
+
+    <p class="time">آخر تحديث: <span id="timestamp">...</span></p>
+  </div>
+  <script src="../Public/Os.js"></script>
+</body>
+</html>
