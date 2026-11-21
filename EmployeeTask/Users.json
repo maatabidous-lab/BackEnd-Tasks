@@ -1,26 +1,26 @@
 [
     {
-        "Name": "محمد خالد",
-        "Phone": "01014397881",
-        "Sallary": "800",
-        "Address": "شبين الكوم",
-        "Role": "Cleaner",
+        "Name": "نور احمد ",
+        "Phone": "01012388819",
+        "Sallary": "2000",
+        "Address": "سوهاج",
+        "Role": "Cashier",
         "Shift": "Evening 🌙"
     },
     {
-        "Name": "على الجرجاوي",
+        "Name": "محمد خالد",
         "Phone": "01014397881",
-        "Sallary": "4800",
+        "Sallary": "2000",
         "Address": "شبين الكوم",
         "Role": "Cashier",
-        "Shift": "Morning ☀️"
+        "Shift": "Evening 🌙"
     },
     {
-        "Name": "سمير هاني",
-        "Phone": "01014397881",
-        "Sallary": "1200",
-        "Address": "شبين القناطر",
+        "Name": "نور احمد ",
+        "Phone": "01012388819",
+        "Sallary": "2000",
+        "Address": "سوهاج",
         "Role": "Cashier",
-        "Shift": "Night 🌃"
+        "Shift": "Evening 🌙"
     }
 ]

@@ -38,7 +38,6 @@ const Server = http.createServer(async (req, res) => {
         }
     }
 });
-
 Server.listen(3001, () => {
     console.log("hello localHost 3001")
 })
